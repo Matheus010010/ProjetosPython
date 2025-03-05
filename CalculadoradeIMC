@@ -1,0 +1,64 @@
+from time import sleep
+
+#funções utilizadas ao decorrer do código
+
+def linhas():
+      print('-=-'*20)
+
+def validar_input(numero):
+      try:
+            float(numero)
+            return True
+      except ValueError:
+            return False
+
+
+
+#cabeçalho do programa
+print('Olá usuário! Vamos Calcular seu IMC?')
+linhas()
+print('Primeiro gostaria de te conhecer melhor!')
+nome=input('Qual seu nome? ')
+linhas()
+print('Olá  ' + nome + ',Vamos começar?')
+linhas()
+print('Primeiramente gostaria de ressaltar que o IMC deve ser INTERPRETADO por um profissional adequado, principalmente no caso de CRIANÇAS ou IDOSOS.')
+linhas()
+
+#coleta e validação dos dados
+
+while True:
+    peso=input('Primeiro ' + nome + ' informe o seu peso em KGs: ').strip().replace(',','.')
+    if validar_input(peso):
+          peso = float(peso)
+          break
+    print('Vamos tentar novamente utilizando apenas números e " , ou . "')
+    sleep(2)
+
+while True:
+      altura=input('Agora informe sua altura em metros: ').strip().replace(',','.')
+      if validar_input(altura):
+            altura=float(altura)
+            break
+      print('Vamos tentar novamente utilizando apenas números e " , ou . "')
+      sleep(2)
+
+sleep(2)
+
+#cálculo de IMC
+imc= peso/(altura*altura)
+linhas()
+print(f'{nome} seu IMC é de : {imc:.2f}')
+linhas()
+
+#enquadrando o IMC
+
+if  imc <= 18.5 :
+    print (nome+' Você está abaixo do peso!')
+elif  imc > 8.5 and imc <= 24.9:
+    print (nome+' Você está no peso ideal!')
+elif imc > 24.9 and imc <= 29.9:
+    print (nome+' Você está com sobrepeso!')
+elif  imc >= 30:
+    print (nome+' Você está dentro do índice de obesidade!')
+    
