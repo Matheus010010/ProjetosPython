@@ -1,0 +1,126 @@
+
+#funções utilizadas ao decorrer do programa
+def linhas():
+    print('-'*50)
+
+def converter_temperatura():
+    print("\nEscolha a conversão de temperatura:")
+    print("1. Celsius para Fahrenheit")
+    print("2. Celsius para Kelvin")
+    print("3. Fahrenheit para Celsius")
+    print("4. Fahrenheit para Kelvin")
+    print("5. Kelvin para Celsius")
+    print("6. Kelvin para Fahrenheit")
+
+    escolha = int(input("Digite sua escolha (1-6): "))
+    
+    if escolha == 1:
+        celsius = float(input("Digite a temperatura em Celsius: "))
+        print(f"{celsius}°C é igual a {((celsius * 9/5) + 32):.2f}°F")
+    elif escolha == 2:
+        celsius = float(input("Digite a temperatura em Celsius: "))
+        print(f"{celsius}°C é igual a {(celsius + 273.15):.2f}K")
+    elif escolha == 3:
+        fahrenheit = float(input("Digite a temperatura em Fahrenheit: "))
+        print(f"{fahrenheit}°F é igual a {((fahrenheit - 32) * 5/9):.2f}°C")
+    elif escolha == 4:
+        fahrenheit = float(input("Digite a temperatura em Fahrenheit: "))
+        print(f"{fahrenheit}°F é igual a {((fahrenheit - 32) * 5/9 + 273.15):.2f}K")
+    elif escolha == 5:
+        kelvin = float(input("Digite a temperatura em Kelvin: "))
+        print(f"{kelvin}K é igual a {(kelvin - 273.15):.2f}°C")
+    elif escolha == 6:
+        kelvin = float(input("Digite a temperatura em Kelvin: "))
+        print(f"{kelvin}K é igual a {((kelvin - 273.15) * 9/5 + 32):.2f}°F")
+    else:
+        print("Escolha inválida!")
+
+def converter_distancia():
+    print("\nEscolha a conversão de distância:")
+    print("1. Quilômetros para Metros")
+    print("2. Quilômetros para Milhas")
+    print("3. Metros para Quilômetros")
+    print("4. Metros para Milhas")
+    print("5. Milhas para Quilômetros")
+    print("6. Milhas para Metros")
+
+    escolha = int(input("Digite sua escolha (1-6): "))
+
+    if escolha == 1:
+        km = float(input("Digite a distância em quilômetros: "))
+        print(f"{km} km é igual a {km * 1000:.2f} metros")
+    elif escolha == 2:
+        km = float(input("Digite a distância em quilômetros: "))
+        print(f"{km} km é igual a {km * 0.621371:.2f} milhas")
+    elif escolha == 3:
+        metros = float(input("Digite a distância em metros: "))
+        print(f"{metros} metros é igual a {metros / 1000:.2f} km")
+    elif escolha == 4:
+        metros = float(input("Digite a distância em metros: "))
+        print(f"{metros} metros é igual a {metros * 0.000621371:.2f} milhas")
+    elif escolha == 5:
+        milhas = float(input("Digite a distância em milhas: "))
+        print(f"{milhas} milhas é igual a {milhas * 1.60934:.2f} km")
+    elif escolha == 6:
+        milhas = float(input("Digite a distância em milhas: "))
+        print(f"{milhas} milhas é igual a {milhas * 1609.34:.2f} metros")
+    else:
+        print("Escolha inválida!")
+
+def converter_peso():
+    print("\nEscolha a conversão de peso:")
+    print("1. Quilogramas para Gramas")
+    print("2. Quilogramas para Libras")
+    print("3. Gramas para Quilogramas")
+    print("4. Gramas para Libras")
+    print("5. Libras para Quilogramas")
+    print("6. Libras para Gramas")
+
+    escolha = int(input("Digite sua escolha (1-6): "))
+
+    if escolha == 1:
+        kg = float(input("Digite o peso em quilogramas: "))
+        print(f"{kg} kg é igual a {kg * 1000:.2f} gramas")
+    elif escolha == 2:
+        kg = float(input("Digite o peso em quilogramas: "))
+        print(f"{kg} kg é igual a {kg * 2.20462:.2f} libras")
+    elif escolha == 3:
+        gramas = float(input("Digite o peso em gramas: "))
+        print(f"{gramas} gramas é igual a {gramas / 1000:.2f} kg")
+    elif escolha == 4:
+        gramas = float(input("Digite o peso em gramas: "))
+        print(f"{gramas} gramas é igual a {gramas * 0.00220462:.2f} libras")
+    elif escolha == 5:
+        libras = float(input("Digite o peso em libras: "))
+        print(f"{libras} libras é igual a {libras * 0.453592:.2f} kg")
+    elif escolha == 6:
+        libras = float(input("Digite o peso em libras: "))
+        print(f"{libras} libras é igual a {libras * 453.592:.2f} gramas")
+    else:
+        print("Escolha inválida!")
+
+#Menu inicial 
+
+def main():
+    print("Olá usuário! Bem-vindo ao Conversor de Unidades!")
+    while True:
+        print("\nEscolha uma categoria para conversão:")
+        print("1. Temperatura")
+        print("2. Distância")
+        print("3. Peso")
+        print("4. Encerrar programa")
+
+        escolha = int(input("Digite sua escolha (1-4): "))
+
+        if escolha == 1:
+            converter_temperatura()
+        elif escolha == 2:
+            converter_distancia()
+        elif escolha == 3:
+            converter_peso()
+        elif escolha == 4:
+            print("Até logo!")
+            break
+        else:
+            print("Escolha inválida! Tente novamente.")
+
