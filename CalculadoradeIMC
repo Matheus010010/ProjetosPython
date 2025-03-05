@@ -55,7 +55,7 @@ linhas()
 
 if  imc <= 18.5 :
     print (nome+' Você está abaixo do peso!')
-elif  imc > 8.5 and imc <= 24.9:
+elif  imc > 18.5 and imc <= 24.9:
     print (nome+' Você está no peso ideal!')
 elif imc > 24.9 and imc <= 29.9:
     print (nome+' Você está com sobrepeso!')
